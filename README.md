@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Aviator Game Project Document
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
 
-## Available Scripts
+**Project Name:** Aviator Game  
+**Description:** The Aviator game is an online multiplayer betting game where players purchase "Aviator Play Cards" to participate. The objective is to cash out before the multiplier crashes, creating an engaging experience that combines chance and strategy. The game includes real-time interactions and email notifications to enhance user engagement.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### 1. Aviator Play Card
+- **Purchase Options:** Users can buy Aviator Play Cards with amounts ranging from 300 INR to 9999 INR.
+- **Redemption:** Users can redeem play cards for game credits.
+- **Expiry:** Play cards will have a default lifetime value, with options for expiration management.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. Multiplayer Functionality
+- Supports real-time gameplay where multiple users can participate simultaneously.
+- Players can join games, place bets, and receive live updates on game status.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 3. Email Notifications
+- Automated email confirmations for actions such as purchasing a play card or redeeming credits.
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend:**
+  - **React:** For building user interfaces.
+  - **Tailwind CSS:** For styling the application with utility-first CSS.
+  - **shadcn/ui:** A library for reusable UI components.
 
-### `npm run build`
+- **Backend:**
+  - **Node.js:** JavaScript runtime for the server-side.
+  - **Express:** Web application framework for building APIs.
+  - **Socket.IO:** For real-time bidirectional communication between clients and the server.
+  - **MongoDB Atlas:** NoSQL database for storing user data and game information.
+  - **Mongoose:** ODM for MongoDB to manage data models and schemas.
+  - **Nodemailer:** For sending email notifications.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Frontend Structure
+- **Components:** Reusable UI components such as PlayCardPurchase, GameInterface, and UserProfile.
+- **Pages:** Main application pages like Home, Game, and Profile.
+- **Utils:** Utility functions, such as for managing socket connections or API calls.
+- **App.js:** The main entry point of the React application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend Structure
+- **Models:** Data models for User and PlayCard.
+- **Routes:** API routes for authentication, play card management, and game logic.
+- **Email Service:** Service for handling email notifications.
 
-### `npm run eject`
+## Implementation Steps
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Step 1: Project Initialization
+- **Backend:** Set up a Node.js project with necessary packages and initialize a MongoDB database.
+- **Frontend:** Create a React app and install Tailwind CSS for styling.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Step 2: User Authentication
+- Implement user registration and login features, ensuring secure password handling.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Step 3: Play Card Management
+- Create functionality for users to purchase and redeem play cards, including validations and data storage.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Step 4: Game Logic
+- Develop the core game mechanics, including the multiplier system and cash-out feature.
 
-## Learn More
+### Step 5: Real-time Multiplayer Features
+- Use Socket.IO to enable real-time game interactions, allowing players to see updates and participate simultaneously.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Step 6: Email Notification System
+- Set up Nodemailer to send email notifications for important user actions, such as purchases and game results.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Step 7: Frontend Development
+- Build user-friendly components and pages, ensuring a smooth and engaging user experience.
 
-### Code Splitting
+### Step 8: Testing
+- Thoroughly test all features for functionality, performance, and security.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Step 9: Deployment
+- Deploy the backend on a cloud service like Heroku and the frontend on platforms like Netlify or Vercel.
 
-### Analyzing the Bundle Size
+## Additional Considerations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Security:** Implement measures to protect user data and secure payment processes.
+- **Performance:** Optimize real-time interactions and database queries to ensure a seamless experience.
+- **User Experience:** Focus on creating an intuitive and visually appealing interface.
+- **Scalability:** Design the architecture to handle increasing numbers of users as the game grows.
